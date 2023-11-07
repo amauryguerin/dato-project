@@ -6,6 +6,15 @@ export default defineNuxtConfig({
 		'@pinia/nuxt',
 		'@nuxtjs/apollo',
 	],
+	vite: {
+		css: {
+			preprocessorOptions: {
+				scss: {
+					additionalData: '@use "@/assets/scss/_global.scss" as *;'
+				}
+			}
+		}
+	},
 	runtimeConfig: {
 		public: {
 			isProd: process.env.NETLIFY_ENV ===

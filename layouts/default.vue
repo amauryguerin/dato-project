@@ -1,4 +1,6 @@
 <template>
-    <SiteHeader />
+    <siteHeader />
     <NuxtPage />
+    <siteFooter/>
 </template>
+<script></script>
