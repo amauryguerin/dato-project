@@ -9,7 +9,7 @@
                     <nuxt-link to="/">Nouveautés</nuxt-link>
                 </li>
                 <li>
-                    <nuxt-link to="/">Sneakers</nuxt-link>
+                    <nuxt-link to="/sneakers">Sneakers</nuxt-link>
                 </li>
                 <li>
                     <nuxt-link to="/">Soldes</nuxt-link>
@@ -25,7 +25,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 0.1rem solid $black;
     text-transform: uppercase;
     padding: 1rem 4rem;
     margin: 0 auto;
@@ -39,11 +38,7 @@ header {
 
             li {
                 a {
-                    font-family: $display;
                     font-size: 2rem;
-                    color: inherit;
-                    text-decoration: none;
-                    letter-spacing: 0.1rem;
                     position: relative;
 
                     &::after {
