@@ -5,7 +5,7 @@
             <img v-for="image in product.productImage" :src="image.url">
         </div>
         <div>
-            <h2> {{ product.productModel }} </h2>
+            <h2> {{ product.productModel.modelName }} </h2>
             <p>{{ product.productDetail }} </p>
             <p>{{ product.productPrice }}€</p>
         </div>
@@ -15,6 +15,7 @@
 <script setup>
 import product from '@/cms/queries/product'
 const { data, pending, error } = await useLazyAsyncQuery(product)
+console.log(data);
 </script>
 
 <style lang="scss">

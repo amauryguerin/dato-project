@@ -7,16 +7,17 @@ export default gql`
       productDesc
       productPrice
       productSlug
-      productModel
       productImage {
         alt
         url
       }
-      productMeta {
-        image {
-          url
-          alt
+      productBrand {
+        brand {
+          brandName
         }
+      }
+      productModel {
+        modelName
       }
     }
   }
