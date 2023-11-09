@@ -38,7 +38,7 @@ header {
 
             li {
                 a {
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     position: relative;
 
                     &::after {

@@ -27,6 +27,9 @@
 
 <style lang="scss" scoped>
 .home {
+    h2 {
+        font-size: 2rem;
+    }
 
     &>*:not(.carousel) {
         padding: 0 6rem;

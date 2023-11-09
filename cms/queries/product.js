@@ -2,21 +2,22 @@ export default gql`
   query product {
     allProducts {
       id
-      productTitle
-      productDetail
-      productDesc
-      productPrice
-      productSlug
-      productModel
       productImage {
         alt
         url
       }
-      productMeta {
-        image {
-          url
-          alt
+      productBrand {
+        brand {
+          brandName
         }
+      }
+      productDesc
+      productDetail
+      productPrice
+      productSlug
+      productTitle
+      productModel {
+        modelName
       }
     }
   }
