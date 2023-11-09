@@ -11,7 +11,7 @@ export default gql`
           brandName
         }
       }
-      productDesc
+      productDesc(markdown: true)
       productDetail
       productPrice
       productSlug

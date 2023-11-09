@@ -5,14 +5,8 @@
         </nuxt-link>
         <nav>
             <ul>
-                <li>
-                    <nuxt-link to="/">Nouveautés</nuxt-link>
-                </li>
-                <li>
-                    <nuxt-link to="/sneakers">Sneakers</nuxt-link>
-                </li>
-                <li>
-                    <nuxt-link to="/">Soldes</nuxt-link>
+                <li v-for="link in data.siteHeader.siteMenu">
+                    <nuxt-link :to="link.linkUrl">{{ link.linkTitle }}</nuxt-link>
                 </li>
             </ul>
         </nav>
@@ -22,7 +16,6 @@
 <script setup>
 import siteGlobal from '@/cms/queries/siteGlobal'
 const { data, pending, error } = await useLazyAsyncQuery(siteGlobal)
-console.log(data);
 </script>
 
 <style scoped lang="scss">

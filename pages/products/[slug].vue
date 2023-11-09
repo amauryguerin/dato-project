@@ -10,9 +10,7 @@
             <p>
                 {{ data.product.productPrice }}€
             </p>
-            <p>
-                {{ data.product.productDesc }}
-            </p>
+            <p v-html="data.product.productDesc"></p>
         </div>
     </div>
 </template>

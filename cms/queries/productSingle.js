@@ -4,7 +4,7 @@ export default gql`
       id
       productTitle
       productDetail
-      productDesc
+      productDesc(markdown: true)
       productPrice
       productSlug
       productImage {

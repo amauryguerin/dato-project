@@ -1,7 +1,6 @@
 <template>
     <footer>
         <nuxt-link to="/">
-            <img src="~assets/images/gofast-logo.png">
         </nuxt-link>
     </footer>
 </template>
