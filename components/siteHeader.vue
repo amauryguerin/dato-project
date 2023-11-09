@@ -1,7 +1,7 @@
 <template>
-    <header>
+    <header v-if="!pending">
         <nuxt-link to="/">
-            <img src="~assets/images/gofast-logo.png">
+            <NuxtImg :src="data.siteHeader.siteLogo.url" />
         </nuxt-link>
         <nav>
             <ul>
@@ -18,7 +18,12 @@
         </nav>
     </header>
 </template>
-<script></script>
+
+<script setup>
+import siteGlobal from '@/cms/queries/siteGlobal'
+const { data, pending, error } = await useLazyAsyncQuery(siteGlobal)
+console.log(data);
+</script>
 
 <style scoped lang="scss">
 header {
@@ -54,7 +59,7 @@ header {
                         transform: scaleX(0);
                         transition: transform .3s ease-in-out;
                     }
-                    
+
                     &:hover {
                         &::after {
                             transform-origin: left;

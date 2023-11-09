@@ -15,7 +15,6 @@
 <script setup>
 import product from '@/cms/queries/product'
 const { data, pending, error } = await useLazyAsyncQuery(product)
-console.log(data);
 </script>
 
 <style lang="scss">
