@@ -20,6 +20,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
     "pinia": "^2.1.7",
-    "vue-datocms": "^4.0.6"
+    "vue-datocms": "^4.0.6",
+    "vue3-carousel-nuxt": "^1.1.0"
   }
 }

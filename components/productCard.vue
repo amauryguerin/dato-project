@@ -1,6 +1,6 @@
 <template>
     <nuxt-link class="product--card" :to="{ path: '/products/' + product.productSlug }" v-for="product in data.allProducts"
-        :key="product.id" v-if="data">
+        :key="product.id" v-if="data &&!pending">
         <div class="product--img--container">
             <img v-for="image in product.productImage" :src="image.url">
         </div>

@@ -7,7 +7,7 @@
         </aside>
         <section class="shop">
             <h1>Sneakers</h1>
-            <div v-if="!pending" class="products--container">
+            <div class="products--container">
                 <product-card />
             </div>
         </section>

@@ -5,6 +5,7 @@ export default defineNuxtConfig({
 		// ...
 		'@pinia/nuxt',
 		'@nuxtjs/apollo',
+		'vue3-carousel-nuxt',
 	],
 	vite: {
 		css: {

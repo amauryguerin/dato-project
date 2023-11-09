@@ -19,8 +19,10 @@
 
 <script setup>
 import productBySlug from '@/cms/queries/productBySlug'
+
 const route = useRoute()
 const { data, pending, error } = await useLazyAsyncQuery(productBySlug, { slug: route.params.slug })
+
 </script>
 
 <style lang="scss" scoped>

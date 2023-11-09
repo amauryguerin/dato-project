@@ -1,5 +1,6 @@
 <template>
     <div class="home">
+        <product-carrousel />
         <div class="product--newest">
             <h2>Nouveautés</h2>
             <div class="products--container">
@@ -26,7 +27,11 @@
 
 <style lang="scss" scoped>
 .home {
-    padding: 0 6rem;
+
+    &>*:not(.carousel) {
+        padding: 0 6rem;
+    }
+
     .products--container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
