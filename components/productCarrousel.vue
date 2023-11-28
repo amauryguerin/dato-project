@@ -14,9 +14,8 @@
 </template>
 
 <script setup>
-import productFeatured from '@/cms/queries/productFeatured'
+const props = defineProps(['data', 'pending', 'error']);
 
-const {data, pending, error} = await useLazyAsyncQuery(productFeatured)
 </script>
 
 <style lang="scss" scoped>

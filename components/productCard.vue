@@ -1,7 +1,6 @@
 <template>
-    <nuxt-link class="product--card" :to="{ path: '/products/' + product.productSlug }"
-               v-for="product in data.allProducts"
-               :key="product.id" v-if="data &&!pending">
+    <nuxt-link v-for="product in dataAdapter()" class="product--card" :to="{ path: '/products/' + product.productSlug }"
+    >
         <div class="product--img--container">
             <NuxtImg v-for="image in product.productImage" :src="image.url" :alt="image.alt"/>
         </div>
@@ -14,9 +13,15 @@
 </template>
 
 <script setup>
-import product from '@/cms/queries/product'
+const props = defineProps(['productGlobal', 'productFiltered']);
 
-const {data, pending, error} = await useLazyAsyncQuery(product)
+const dataAdapter = () => {
+    if (props.productGlobal) {
+        return props.productGlobal.allProducts;
+    } else {
+        return props.productFiltered;
+    }
+}
 </script>
 
 <style lang="scss">

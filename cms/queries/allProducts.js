@@ -1,5 +1,5 @@
 export default gql`
-  query product {
+  query allProducts {
     allProducts {
       id
       productImage {
@@ -18,6 +18,12 @@ export default gql`
       productTitle
       productModel {
         modelName
+      }
+      productCategory {
+        category {
+          categoryName
+        id
+        }
       }
     }
   }

@@ -1,20 +1,16 @@
 <template>
-    <div class="home">
-        <product-carrousel />
-        <div v-for="section in data.home.homeSection" class="test">
-            <h2 v-if="section.__typename==='SectionCategoryRecord'">{{ section.category.categoryName }}</h2>
-            <h2 v-else>{{ section.model.modelName }}</h2>
-            <div class="products--container">
-                <product-card />
-            </div>
-        </div>
+    <div v-if="!homePending" class="home">
+        <product-carrousel :data="productFeaturedData" :pending="pFeaturedPending" :error="pFeaturedError"/>
+        <product-row :data="homeData" :pending="homePending" :error="homeError"/>
     </div>
 </template>
 
 <script setup>
 import home from '@/cms/queries/home'
+const {data: homeData, pending: homePending, error: homeError} = await useLazyAsyncQuery(home)
 
-const {data, pending, error} = await useLazyAsyncQuery(home)
+import productFeatured from '@/cms/queries/productFeatured'
+const {data: productFeaturedData, pending: pFeaturedPending, error: pFeaturedError} = await useLazyAsyncQuery(productFeatured)
 </script>
 
 <style lang="scss" scoped>
@@ -25,12 +21,6 @@ const {data, pending, error} = await useLazyAsyncQuery(home)
 
     &>*:not(.carousel) {
         padding: 0 6rem;
-    }
-
-    .products--container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
     }
 }
 </style>
