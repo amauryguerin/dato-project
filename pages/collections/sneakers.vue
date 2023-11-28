@@ -8,8 +8,8 @@
 </template>
 
 <script setup>
-import allProducts from '~/cms/queries/allProducts.js';
-const {data: productsData, pending: productsPending, error: productsError} = await useLazyAsyncQuery(allProducts);
+import getAllProducts from '~/cms/queries/allProducts.js';
+const {data: productsData, pending: productsPending, error: productsError} = await useLazyAsyncQuery(getAllProducts);
 </script>
 
 <style lang="scss">

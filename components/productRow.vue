@@ -11,8 +11,8 @@
 <script setup>
 const props = defineProps(['data', 'pending', 'error']);
 
-import allProducts from '~/cms/queries/allProducts.js';
-const {data: productsData, pending: productsPending, error: productsError} = await useLazyAsyncQuery(allProducts);
+import getAllProducts from '~/cms/queries/allProducts.js';
+const {data: productsData, pending: productsPending, error: productsError} = await useLazyAsyncQuery(getAllProducts);
 const getFilteredProducts = (section) => {
     if (section.__typename === 'SectionCategoryRecord') {
         const currentCategoryName = section.category.categoryName;

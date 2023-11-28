@@ -6,11 +6,11 @@
 </template>
 
 <script setup>
-import home from '@/cms/queries/home'
-const {data: homeData, pending: homePending, error: homeError} = await useLazyAsyncQuery(home)
+import getHome from '@/cms/queries/home'
+const {data: homeData, pending: homePending, error: homeError} = await useLazyAsyncQuery(getHome)
 
-import productFeatured from '@/cms/queries/productFeatured'
-const {data: productFeaturedData, pending: pFeaturedPending, error: pFeaturedError} = await useLazyAsyncQuery(productFeatured)
+import getProductFeatured from '@/cms/queries/productFeatured'
+const {data: productFeaturedData, pending: pFeaturedPending, error: pFeaturedError} = await useLazyAsyncQuery(getProductFeatured)
 </script>
 
 <style lang="scss" scoped>

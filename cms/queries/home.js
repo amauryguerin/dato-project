@@ -2,12 +2,12 @@ export default gql`
     query Home {
         home {
             homeSection {
-            ... on SectionCategoryRecord {
+                ... on SectionCategoryRecord {
                     category {
                         categoryName
                     }
                 }
-            ... on SectionModelRecord {
+                ... on SectionModelRecord {
                     model {
                         modelName
                     }

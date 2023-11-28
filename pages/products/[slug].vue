@@ -16,10 +16,10 @@
 </template>
 
 <script setup>
-import productSingle from '@/cms/queries/productSingle'
+import getProductSingle from '@/cms/queries/productSingle'
 
 const route = useRoute()
-const {data, pending, error} = await useLazyAsyncQuery(productSingle, {slug: route.params.slug})
+const {data, pending, error} = await useLazyAsyncQuery(getProductSingle, {slug: route.params.slug})
 
 </script>
 
