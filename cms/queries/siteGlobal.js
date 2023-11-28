@@ -12,5 +12,20 @@ export default gql`
         linkUrl
       }
     }
+    siteFooter {
+        id
+        siteLogoFooter {
+            alt
+            url
+        }
+        footerSubmenuChoice {
+        footerSubmenuTitle
+        footerSubmenu {
+            id
+            linkTitle
+            linkUrl
+      }
+      }
+      }
   }
 `;

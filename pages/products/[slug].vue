@@ -1,7 +1,7 @@
 <template>
     <div v-if="!pending" class="product--container">
         <div class="product--gallery">
-            <img v-for="image in data.product.productImage" :src="image.url">
+            <NuxtImg v-for="image in data.product.productImage" :src="image.url" :alt="image.alt"/>
         </div>
         <div class="product--info">
             <h1>
@@ -10,7 +10,7 @@
             <p>
                 {{ data.product.productPrice }}€
             </p>
-            <p v-html="data.product.productDesc"></p>
+            <div v-html="data.product.productDesc"></div>
         </div>
     </div>
 </template>
@@ -19,7 +19,7 @@
 import productSingle from '@/cms/queries/productSingle'
 
 const route = useRoute()
-const { data, pending, error } = await useLazyAsyncQuery(productSingle, { slug: route.params.slug })
+const {data, pending, error} = await useLazyAsyncQuery(productSingle, {slug: route.params.slug})
 
 </script>
 

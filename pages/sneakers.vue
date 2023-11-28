@@ -8,7 +8,7 @@
         <section class="shop">
             <h1>Sneakers</h1>
             <div class="products--container">
-                <product-card />
+                <product-card/>
             </div>
         </section>
     </div>
@@ -23,8 +23,7 @@
 
     aside,
     section {
-        padding: 2rem 1rem;
-        ;
+        padding: 2rem 1rem;;
     }
 
     aside {

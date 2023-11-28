@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 		'@pinia/nuxt',
 		'@nuxtjs/apollo',
 		'vue3-carousel-nuxt',
-		'@nuxt/image',
+		'@nuxt/image'
 	],
 	vite: {
 		css: {
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		isProd: process.env.NETLIFY_ENV === 'production',
 		datoToken: process.env.NUXT_DATO_TOKEN,
-		
+
 		public: {
 			isProd: process.env.NETLIFY_ENV === 'production',
 			datoToken: process.env.NUXT_DATO_TOKEN

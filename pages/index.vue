@@ -1,20 +1,9 @@
 <template>
     <div class="home">
         <product-carrousel />
-        <div class="product--newest">
-            <h2>Nouveautés</h2>
-            <div class="products--container">
-                <product-card />
-            </div>
-        </div>
-        <div class="product--newest">
-            <h2>Nike Air Jordan 1</h2>
-            <div class="products--container">
-                <product-card />
-            </div>
-        </div>
-        <div class="product--newest">
-            <h2>Nike Air Max 1</h2>
+        <div v-for="section in data.home.homeSection" class="test">
+            <h2 v-if="section.__typename==='SectionCategoryRecord'">{{ section.category.categoryName }}</h2>
+            <h2 v-else>{{ section.model.modelName }}</h2>
             <div class="products--container">
                 <product-card />
             </div>
@@ -23,6 +12,9 @@
 </template>
 
 <script setup>
+import home from '@/cms/queries/home'
+
+const {data, pending, error} = await useLazyAsyncQuery(home)
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <template>
     <header v-if="!pending">
         <nuxt-link to="/">
-            <NuxtImg :src="data.siteHeader.siteLogo.url" />
+            <NuxtImg :src="data.siteHeader.siteLogo.url" :alt="data.siteHeader.siteLogo.alt"/>
         </nuxt-link>
         <nav>
             <ul>
@@ -15,7 +15,8 @@
 
 <script setup>
 import siteGlobal from '@/cms/queries/siteGlobal'
-const { data, pending, error } = await useLazyAsyncQuery(siteGlobal)
+
+const {data, pending, error} = await useLazyAsyncQuery(siteGlobal)
 </script>
 
 <style scoped lang="scss">
@@ -29,7 +30,6 @@ header {
 
     nav {
         ul {
-            list-style: none;
             display: flex;
             align-items: center;
             gap: 2rem;
