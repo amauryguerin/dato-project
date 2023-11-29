@@ -1,5 +1,5 @@
 <template>
-    <section v-for="section in data.home.homeSection">
+    <section v-if="!productsPending" v-for="section in data.home.homeSection">
         <h2 v-if="section.__typename==='SectionCategoryRecord'">{{ section.category.categoryName }}</h2>
         <h2 v-else>{{ section.model.modelName }}</h2>
         <div class="products--container">
@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-const props = defineProps(['data', 'pending', 'error']);
+const props = defineProps(['data']);
 
 import getAllProducts from '~/cms/queries/allProducts.js';
 const {data: productsData, pending: productsPending, error: productsError} = await useLazyAsyncQuery(getAllProducts);

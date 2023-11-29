@@ -1,14 +1,11 @@
 <template>
-        <section class="shop">
-            <h1>Sneakers</h1>
-            <div class="products--container">
-                <product-card :productGlobal="productsData"/>
-            </div>
-        </section>
+    <product-archive v-if="!productsPending"
+                     :productGlobal="productsData"/>
 </template>
 
 <script setup>
 import getAllProducts from '~/cms/queries/allProducts.js';
+
 const {data: productsData, pending: productsPending, error: productsError} = await useLazyAsyncQuery(getAllProducts);
 </script>
 

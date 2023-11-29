@@ -1,7 +1,7 @@
 <template>
     <div v-if="!homePending" class="home">
-        <product-carrousel :data="productFeaturedData" :pending="pFeaturedPending" :error="pFeaturedError"/>
-        <product-row :data="homeData" :pending="homePending" :error="homeError"/>
+        <product-carrousel :data="productFeaturedData" :pending="productFeaturedPending"/>
+        <product-row :data="homeData"/>
     </div>
 </template>
 
@@ -10,7 +10,7 @@ import getHome from '@/cms/queries/home'
 const {data: homeData, pending: homePending, error: homeError} = await useLazyAsyncQuery(getHome)
 
 import getProductFeatured from '@/cms/queries/productFeatured'
-const {data: productFeaturedData, pending: pFeaturedPending, error: pFeaturedError} = await useLazyAsyncQuery(getProductFeatured)
+const {data: productFeaturedData, pending: productFeaturedPending, error: productFeaturedError} = await useLazyAsyncQuery(getProductFeatured)
 </script>
 
 <style lang="scss" scoped>

@@ -1,11 +1,10 @@
 <template>
-    <carousel autoplay="4000" wrapAround pauseAutoplayOnHover>
-        <slide v-for="product in data.allProducts" :key="product.id" v-if="data && !pending">
+    <carousel v-if="!pending" :autoplay="4000" wrapAround pauseAutoplayOnHover>
+        <slide v-for="product in data.allProducts" :key="product.id">
             <nuxt-link :to="{ path: '/products/' + product.productSlug }">
                 <NuxtImg v-for="image in product.productImage" :src="image.url" :alt="image.alt"/>
             </nuxt-link>
         </slide>
-
         <template #addons>
             <navigation/>
             <pagination/>
