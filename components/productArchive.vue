@@ -15,7 +15,13 @@ const props = defineProps(['productFiltered', 'productGlobal']);
 
 <style scoped lang="scss">
 .shop {
-    width: 80%;
+    width: 100%;
+    max-width: $desktop;
+    margin: 0 auto;
+
+    @media screen and (max-width: $desktop) {
+        padding: 0 1rem;
+    }
 
     h1 {
         font-size: 2rem;
@@ -26,6 +32,14 @@ const props = defineProps(['productFiltered', 'productGlobal']);
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
+
+        @media screen and (max-width: $desktop) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $tablet) {
+            grid-template-columns: 1fr;
+        }
     }
 }
 </style>

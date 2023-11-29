@@ -26,6 +26,7 @@ const {data, pending, error} = await useLazyAsyncQuery(siteGlobal)
 <style scoped lang="scss">
 footer {
     display: flex;
+    flex-wrap: wrap;
     gap: 4rem;
     padding: 4rem;
     background-color: $black;
@@ -33,6 +34,7 @@ footer {
 
     .footer--submenus {
         display: flex;
+        flex-wrap: wrap;
         gap: 4rem;
 
         h4 {

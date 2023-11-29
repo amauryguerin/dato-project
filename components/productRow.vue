@@ -33,9 +33,23 @@ const getFilteredProducts = (section) => {
 </script>
 
 <style scoped lang="scss">
-.products--container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+
+section {
+    max-width: $desktop;
+    margin: 0 auto;
+
+    .products--container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+
+        @media screen and (max-width: $desktop) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
 }
 </style>

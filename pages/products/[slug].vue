@@ -30,6 +30,11 @@ const {data, pending, error} = await useLazyAsyncQuery(getProductSingle, {slug: 
     gap: 4rem;
     padding: 0 2rem;
 
+    @media screen and (max-width: $desktop) {
+        display: block;
+        padding: 0;
+    }
+
     .product--gallery,
     .product--info {
         width: 100%;
@@ -42,6 +47,11 @@ const {data, pending, error} = await useLazyAsyncQuery(getProductSingle, {slug: 
             width: 100%;
             object-fit: scale-down;
         }
+    }
+
+    .product--info {
+        margin: 0 auto;
+        padding: 0 1rem;
     }
 }
 </style>

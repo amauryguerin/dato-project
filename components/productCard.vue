@@ -30,6 +30,10 @@ const dataAdapter = () => {
         padding: 1rem;
         background-color: $grey;
         margin-bottom: 1rem;
+
+        img {
+            margin: 0 auto;
+        }
     }
 }
 </style>

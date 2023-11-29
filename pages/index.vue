@@ -19,8 +19,10 @@ const {data: productFeaturedData, pending: productFeaturedPending, error: produc
         font-size: 2rem;
     }
 
-    &>*:not(.carousel) {
-        padding: 0 6rem;
+    :not(.carousel) {
+        @media screen and (max-width: $desktop) {
+            padding: 0 1rem;
+        }
     }
 }
 </style>
