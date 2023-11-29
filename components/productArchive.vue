@@ -1,6 +1,7 @@
 <template>
     <section class="shop">
-        <h1>{{ route.params.slug }}</h1>
+        <h1 v-if="Object.keys(route.params).length === 0">Toutes nos sneakers</h1>
+        <h1 v-else>{{ route.params.slug }}</h1>
         <div class="products--container">
             <product-card :productGlobal="productGlobal" :productFiltered="productFiltered"/>
         </div>

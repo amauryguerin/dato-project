@@ -1,16 +1,17 @@
 <template>
-    <div v-if="!pending" class="product--container">
+    <seo-adapter v-if="!productSinglePending" :productSEO="productSingle.product.productSeo"/>
+    <div v-if="!productSinglePending" class="product--container">
         <div class="product--gallery">
-            <NuxtImg v-for="image in data.product.productImage" :src="image.url" :alt="image.alt"/>
+            <NuxtImg v-for="image in productSingle.product.productImage" :src="image.url" :alt="image.alt"/>
         </div>
         <div class="product--info">
             <h1>
-                {{ data.product.productTitle }}
+                {{ productSingle.product.productTitle }}
             </h1>
             <p>
-                {{ data.product.productPrice }}€
+                {{ productSingle.product.productPrice }}€
             </p>
-            <div v-html="data.product.productDesc"></div>
+            <div v-html="productSingle.product.productDesc"></div>
         </div>
     </div>
 </template>
@@ -19,8 +20,7 @@
 import getProductSingle from '@/cms/queries/productSingle'
 
 const route = useRoute()
-const {data, pending, error} = await useLazyAsyncQuery(getProductSingle, {slug: route.params.slug})
-
+const {data: productSingle, pending: productSinglePending, error: productSingleError} = await useLazyAsyncQuery(getProductSingle, {slug: route.params.slug})
 </script>
 
 <style lang="scss" scoped>

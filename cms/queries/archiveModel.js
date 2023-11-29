@@ -6,11 +6,6 @@ export default gql`
         }
         allProducts {
             id
-            productTitle
-            productDetail
-            productDesc(markdown: true)
-            productPrice
-            productSlug
             productImage {
                 alt
                 url
@@ -18,19 +13,30 @@ export default gql`
             productBrand {
                 brand {
                     brandName
-                    brandSlug
                 }
             }
+            productDesc(markdown: true)
+            productDetail
+            productPrice
+            productSlug
+            productTitle
             productModel {
                 modelName
-                modelSlug
             }
             productCategory {
                 category {
                     categoryName
-                    categorySlug
+                    id
+                }
+            }
+            productSeo {
+                title
+                description
+                image {
+                    url
                 }
             }
         }
+
     }
 `;

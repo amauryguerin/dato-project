@@ -12,6 +12,7 @@
 const props = defineProps(['data']);
 
 import getAllProducts from '~/cms/queries/allProducts.js';
+
 const {data: productsData, pending: productsPending, error: productsError} = await useLazyAsyncQuery(getAllProducts);
 const getFilteredProducts = (section) => {
     if (section.__typename === 'SectionCategoryRecord') {

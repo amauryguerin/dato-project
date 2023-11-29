@@ -30,6 +30,13 @@ export default gql`
                     categorySlug
                 }
             }
+            productSeo {
+                title
+                description
+                image {
+                    url
+                }
+            }
         }
     }
 `;

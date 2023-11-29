@@ -13,6 +13,13 @@ export default gql`
                     }
                 }
             }
+            homeSeo {
+                title
+                description
+                image {
+                    url
+                }
+            }
         }
     }
 `;
