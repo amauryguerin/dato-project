@@ -1,6 +1,10 @@
 export default gql`
-    query productBySlug($slug: String) {
-        product(filter: { productSlug: { eq: $slug } }) {
+    query archiveModel($slug: String) {
+        productModel (filter: {modelSlug: {eq: $slug}}){
+            modelName
+            modelSlug
+        }
+        allProducts {
             id
             productTitle
             productDetail
@@ -14,10 +18,18 @@ export default gql`
             productBrand {
                 brand {
                     brandName
+                    brandSlug
                 }
             }
             productModel {
                 modelName
+                modelSlug
+            }
+            productCategory {
+                category {
+                    categoryName
+                    categorySlug
+                }
             }
         }
     }

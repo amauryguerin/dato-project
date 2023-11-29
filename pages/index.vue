@@ -1,28 +1,16 @@
 <template>
-    <div class="home">
-        <product-carrousel />
-        <div class="product--newest">
-            <h2>Nouveautés</h2>
-            <div class="products--container">
-                <product-card />
-            </div>
-        </div>
-        <div class="product--newest">
-            <h2>Nike Air Jordan 1</h2>
-            <div class="products--container">
-                <product-card />
-            </div>
-        </div>
-        <div class="product--newest">
-            <h2>Nike Air Max 1</h2>
-            <div class="products--container">
-                <product-card />
-            </div>
-        </div>
+    <div v-if="!homePending" class="home">
+        <product-carrousel :data="productFeaturedData" :pending="productFeaturedPending"/>
+        <product-row :data="homeData"/>
     </div>
 </template>
 
 <script setup>
+import getHome from '@/cms/queries/home'
+const {data: homeData, pending: homePending, error: homeError} = await useLazyAsyncQuery(getHome)
+
+import getProductFeatured from '@/cms/queries/productFeatured'
+const {data: productFeaturedData, pending: productFeaturedPending, error: productFeaturedError} = await useLazyAsyncQuery(getProductFeatured)
 </script>
 
 <style lang="scss" scoped>
@@ -31,14 +19,10 @@
         font-size: 2rem;
     }
 
-    &>*:not(.carousel) {
-        padding: 0 6rem;
-    }
-
-    .products--container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
+    :not(.carousel) {
+        @media screen and (max-width: $desktop) {
+            padding: 0 1rem;
+        }
     }
 }
 </style>
