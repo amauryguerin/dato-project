@@ -1,6 +1,6 @@
 <template>
     <product-archive v-if="!productByCategoryPending && !productByModelPending "
-                     :productFiltered="getFilteredProducts()" :pageName="getFilteredProducts"/>
+                     :productFiltered="getFilteredProducts()" :pageName="getFilteredProducts" :isCategoryArchive="isCategoryArchive"/>
 </template>
 
 <script setup>
@@ -22,10 +22,14 @@ const {
     error: getProductByModelError
 } = await useLazyAsyncQuery(getProductByModel, {slug: route.params.slug})
 
+let isCategoryArchive = false;
 const getFilteredProducts = () => {
     const filteredProducts = productByCategory.value.allProducts.filter(product => {
         const productCategories = product.productCategory;
         const matchesCategory = productCategories.some(category => category.category.categorySlug === route.params.slug);
+        if (matchesCategory) {
+            isCategoryArchive = true;
+        }
         return matchesCategory;
     });
     if (filteredProducts.length === 0) {

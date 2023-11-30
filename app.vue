@@ -2,6 +2,8 @@
     <NuxtLayout/>
 </template>
 
+<script setup>
+</script>
 <style lang="scss">
 * {
     box-sizing: border-box;

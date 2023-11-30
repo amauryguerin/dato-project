@@ -1,5 +1,11 @@
 <template>
-    <seo-adapter v-if="!productSinglePending" :productSEO="productSingle.product.productSeo"/>
+    <Head v-if="!productSinglePending">
+        <Title>{{ productSingle.product.productSeo.title }}</Title>
+        <Meta name="description" :content="productSingle.product.productSeo.description" />
+        <Meta name="ogTitle" :content="productSingle.product.productSeo.title" />
+        <Meta name="ogDescription" :content="productSingle.product.productSeo.description" />
+        <Meta name="ogImage" :content="productSingle.product.productSeo.image.url" />
+    </Head>
     <div v-if="!productSinglePending" class="product--container">
         <div class="product--gallery">
             <NuxtImg v-for="image in productSingle.product.productImage" :src="image.url" :alt="image.alt"/>
