@@ -23,11 +23,19 @@ export default gql`
             }
             productModel {
                 modelName
+                modelSlug
             }
             productCategory {
                 category {
                     categoryName
                     categorySlug
+                }
+            }
+            productSeo {
+                title
+                description
+                image {
+                    url
                 }
             }
         }

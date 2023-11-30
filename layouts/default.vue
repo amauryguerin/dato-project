@@ -1,15 +1,11 @@
 <template>
-    <siteHeader />
-    <main>
-        <NuxtPage />
-    </main>
-    <siteFooter />
+    <Html lang="fr">
+        <siteHeader/>
+        <main>
+            <NuxtPage/>
+        </main>
+        <siteFooter/>
+    </Html>
 </template>
-<script></script>
-<!-- <style scoped lang="scss">
-main {
-    max-width: $desktop;
-    width: 100%;
-    margin: 0 auto;
-}
-</style> -->
+<script setup>
+</script>

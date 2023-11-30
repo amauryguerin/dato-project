@@ -9,6 +9,7 @@ export default gql`
             productBrand {
                 brand {
                     brandName
+                    brandSlug
                 }
             }
             productDesc(markdown: true)
@@ -23,6 +24,13 @@ export default gql`
                 category {
                     categoryName
                     id
+                }
+            }
+            productSeo {
+                title
+                description
+                image {
+                    url
                 }
             }
         }

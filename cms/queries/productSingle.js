@@ -18,6 +18,14 @@ export default gql`
             }
             productModel {
                 modelName
+                modelSlug
+            }
+            productSeo {
+                title
+                description
+                image {
+                    url
+                }
             }
         }
     }
