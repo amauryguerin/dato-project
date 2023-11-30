@@ -18,6 +18,7 @@ export default gql`
             }
             productModel {
                 modelName
+                modelSlug
             }
             productSeo {
                 title

@@ -12,6 +12,8 @@
 const route = useRoute();
 const props = defineProps(['productFiltered', 'productGlobal']);
 
+// faire query cat et model pour comparer slug courant avec slug cat puis filtrer, ensuite passer la data
+// utiliser useSeoMeta pour éviter erreur hydration
 </script>
 
 <style scoped lang="scss">

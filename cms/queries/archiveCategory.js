@@ -23,6 +23,7 @@ export default gql`
             }
             productModel {
                 modelName
+                modelSlug
             }
             productCategory {
                 category {

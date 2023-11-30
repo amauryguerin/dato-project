@@ -1,5 +1,5 @@
 <template>
-    <seo-adapter v-if="!homePending" :productSEO="homeData.home.homeSeo"/>
+    <seo-adapter :productSEO="homeData.home.homeSeo"/>
     <div v-if="!homePending" class="home">
         <product-carrousel :data="productFeaturedData" :pending="productFeaturedPending"/>
         <product-row :data="homeData"/>
